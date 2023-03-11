@@ -36,7 +36,7 @@
 
 > #### Ответ:
 > Установил NGINX, изменил конфигурацию, пишем логи в syslog по порту 5445:  
-> ```json
+> ```
 > events {
 >         worker_connections 1024;
 > }
@@ -70,7 +70,7 @@
 > 
 > Конфигурация logstash настроена в /etc/logstash/conf.d/nginx-logstash.conf   
 > Читаем из 5445, парсим json, записываем в elasticsearch:
-> ```json
+> ```
 > input {
 >   syslog {
 >     port => 5445
@@ -114,7 +114,7 @@
 
 > #### Ответ:
 > В концигурации logstash для nginx добавляем input, будем просто помечать другим тегом:
-> ```json
+> ```
 > input {
 >   beats {
 >     port => 5678
